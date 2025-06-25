@@ -1,0 +1,248 @@
+/* Estilo Premium HotelYA */
+:root {
+    --gold: #D4AF37;
+    --gold-light: #F4E5C2;
+    --gold-dark: #B38B2D;
+    --black: #0A0A0A;
+    --gray-dark: #1E1E1E;
+    --gray-medium: #3D3D3D;
+    --gray-light: #E0E0E0;
+    --gray-soft: #F0F0F0;
+    --white: #FFFFFF;
+    --error: #C62828;
+    --radius: 8px;
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    --shadow-text: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-deep: 0 15px 30px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--gray-light);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Header Premium */
+header {
+    position: relative;
+    background-color: var(--black);
+    color: var(--gold);
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-deep);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    text-shadow: var(--shadow-text);
+    letter-spacing: 1.5px;
+}
+
+.texto {
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--gold-light);
+    margin: 2rem 0;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+main {
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 30, 30, 0.9);
+    z-index: -1;
+}
+
+.hoteles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 2rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tarjetas de Hotel Premium */
+.hotel-card {
+    background-color: rgba(61, 61, 61, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-deep);
+    padding: 1.5rem;
+    width: 300px;
+    text-align: left;
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hotel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--gold);
+}
+
+.hotel-card h2 {
+    margin-top: 0;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.hotel-card .ubicacion {
+    font-style: italic;
+    color: var(--gray-light);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.hotel-card .estrellas {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    letter-spacing: 2px;
+}
+
+/* Formulario de Logout */
+.logout-form {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+/* Botones Premium */
+.btn-logout {
+    background-color: transparent;
+    color: var(--gold-light);
+    border: 1px solid var(--gold);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.8px;
+}
+
+.btn-logout:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+}
+
+.btn-info {
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+    transition: var(--transition);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.8px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.btn-info:hover {
+    background-color: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+/* Efecto shine para botones */
+.btn-info::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(30deg);
+}
+
+.btn-info:hover::after {
+    animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+    to {
+        left: 150%;
+        top: 150%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .logout-form {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-top: 1rem;
+    }
+    
+    .texto {
+        font-size: 1.5rem;
+    }
+    
+    main {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+    
+    .texto {
+        font-size: 1.2rem;
+    }
+    
+    .hotel-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
